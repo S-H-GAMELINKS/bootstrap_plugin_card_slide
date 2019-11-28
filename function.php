@@ -67,23 +67,30 @@
                             $plugins[2]
                     </div>
                 </div>
-                <div class=\"carousel-item\">
-                    <div class=\"row w-100\">
-                            $plugins[3]
-                            $plugins[4]
-                            $plugins[5]
-                    </div>
-                </div>
-                <div class=\"carousel-item\">
-                    <div class=\"row w-100\">
-                            $plugins[6]
-                            $plugins[7]
-                            $plugins[8]
-                    </div>
-                </div>
-            </div>
-        </div>
     ";
+
+    if(count($plugins) >= 4) {
+        for($i = 3; $i < count($plugins) - 1;) {
+            $first = $plugins[$i];
+            $i++;
+            $second = $plugins[$i];
+            $i++;
+            $third = $plugins[$i];
+            $i++;
+
+            $result .= "            
+                <div class=\"carousel-item\">
+                    <div class=\"row w-100\">
+                            $first
+                            $second
+                            $thrid
+                    </div>
+                </div>
+            ";
+        }
+    }
+
+    $result .= "</div></div>";
 
     return $result;
  }
